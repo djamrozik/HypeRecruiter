@@ -36,6 +36,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+<<<<<<< HEAD
 		8EBEFFC7E54A4F49B1D12F79 /* libRNDocumentPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45AEB1450324DC9A76D2300 /* libRNDocumentPicker.a */; };
 		A9D22D8C427B4C829DCC9258 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69427D2DF7E14A59ABF0FB4F /* libRNImagePicker.a */; };
 		7A2E801F999542BA90A0F63E /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F09B4C80E1604180B67AB7C8 /* Raleway-Black.ttf */; };
@@ -56,6 +57,10 @@
 		266B67BBA8B74DDA81279126 /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A41D5EDF02304A11A8281BBF /* Raleway-SemiBoldItalic.ttf */; };
 		905AA36EF9964D9697D5099A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AA12F391A574403980A4EE2 /* Raleway-Thin.ttf */; };
 		3801D6A4A85B4CBFB36AB0CA /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0D09BD6210340CDB7EC766F /* Raleway-ThinItalic.ttf */; };
+=======
+		EE3B803BFC6A4E78A08F6EE7 /* libRNDocumentPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A93A14A22B4694AE35B12B /* libRNDocumentPicker.a */; };
+		030A07CBB3D04EE0AF99D141 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F266DDB39D434203893B99A3 /* libRNImagePicker.a */; };
+>>>>>>> cf659aad1b13b265980546693ce05be48d01ed92
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +288,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		3A4B95178D2B433A939BCDB3 /* RNDocumentPicker.xcodeproj */ = {isa = PBXFileReference; name = "RNDocumentPicker.xcodeproj"; path = "../node_modules/react-native-document-picker/ios/RNDocumentPicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		E45AEB1450324DC9A76D2300 /* libRNDocumentPicker.a */ = {isa = PBXFileReference; name = "libRNDocumentPicker.a"; path = "libRNDocumentPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		84EC6FF871E545FBBE71E37B /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
@@ -305,6 +311,12 @@
 		A41D5EDF02304A11A8281BBF /* Raleway-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Raleway-SemiBoldItalic.ttf"; path = "../app/assets/fonts/Raleway-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4AA12F391A574403980A4EE2 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; name = "Raleway-Thin.ttf"; path = "../app/assets/fonts/Raleway-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E0D09BD6210340CDB7EC766F /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Raleway-ThinItalic.ttf"; path = "../app/assets/fonts/Raleway-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+=======
+		CDED8633ADAC441CBCAED35D /* RNDocumentPicker.xcodeproj */ = {isa = PBXFileReference; name = "RNDocumentPicker.xcodeproj"; path = "../node_modules/react-native-document-picker/ios/RNDocumentPicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		E1A93A14A22B4694AE35B12B /* libRNDocumentPicker.a */ = {isa = PBXFileReference; name = "libRNDocumentPicker.a"; path = "libRNDocumentPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		31EA3F256B734110A0C950F2 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		F266DDB39D434203893B99A3 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+>>>>>>> cf659aad1b13b265980546693ce05be48d01ed92
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,8 +345,13 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+<<<<<<< HEAD
 				8EBEFFC7E54A4F49B1D12F79 /* libRNDocumentPicker.a in Frameworks */,
 				A9D22D8C427B4C829DCC9258 /* libRNImagePicker.a in Frameworks */,
+=======
+				EE3B803BFC6A4E78A08F6EE7 /* libRNDocumentPicker.a in Frameworks */,
+				030A07CBB3D04EE0AF99D141 /* libRNImagePicker.a in Frameworks */,
+>>>>>>> cf659aad1b13b265980546693ce05be48d01ed92
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,8 +520,13 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+<<<<<<< HEAD
 				3A4B95178D2B433A939BCDB3 /* RNDocumentPicker.xcodeproj */,
 				84EC6FF871E545FBBE71E37B /* RNImagePicker.xcodeproj */,
+=======
+				CDED8633ADAC441CBCAED35D /* RNDocumentPicker.xcodeproj */,
+				31EA3F256B734110A0C950F2 /* RNImagePicker.xcodeproj */,
+>>>>>>> cf659aad1b13b265980546693ce05be48d01ed92
 			);
 			name = Libraries;
 			sourceTree = "<group>";

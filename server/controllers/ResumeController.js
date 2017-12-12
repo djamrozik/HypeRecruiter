@@ -22,12 +22,75 @@ function filterUser(doc){
 
 module.exports = (router, isLoggedIn, getType) => {
 
-    // router.get('/upload/',
-    //     isLoggedIn,
-    //     function(req, res) {
-    //
-    //     });
+    // route for recruiter to view a jobseekser's resume
+    router.get('/resume/:id/',
+        isLoggedIn,
+        function(req, res) {
+            var db = mongoose.connection.db;
+            var mongoDriver = mongoose.mongo;
+            var gfs = new Gridfs(db, mongoDriver);
+
+            var ws = fs.createWriteStream('temp.pdf');
+
+            //read from mongodb
+            var rs = gfs.createReadStream({
+                 "_id": req.params.id
+            });
+
+            rs.pipe(ws);
+            ws.on('close', function () {
+                fs.readFile('temp.pdf', function (err,data){
+                    res.contentType("application/pdf");
+                    res.send(data);
+
+                    fs.unlink("temp.pdf", function(err) {
+                        if(err){
+                            console.log(err);
+                        }
+                    });
+                });
+
+            });
+
+        });
+
+    // route for user to view their own resume.
+    router.get('/upload/',
+        isLoggedIn,
+        function(req, res) {
+            console.log("request Made");
+            var db = mongoose.connection.db;
+            var mongoDriver = mongoose.mongo;
+            var gfs = new Gridfs(db, mongoDriver);
+
+            var ws = fs.createWriteStream('temp.pdf');
+
+            //read from mongodb
+            console.log("reached")
+            var rs = gfs.createReadStream({
+                 "_id": req.user.resume
+            });
+            console.log("reach");
+
+            rs.pipe(ws);
+            ws.on('close', function () {
+                fs.readFile('temp.pdf', function (err,data){
+                    res.contentType("application/pdf");
+                    res.send(data);
+
+                    fs.unlink("temp.pdf", function(err) {
+                        if(err){
+                            console.log(err);
+                        }
+                    });
+                });
+
+            });
+
+        });
+
     // https://medium.com/@patrickshaughnessy/front-to-back-file-uploads-using-gridfs-9ddc3fc43b5d
+    // http://excellencenodejsblog.com/gridfs-using-mongoose-nodejs/
     router.post('/upload/',
         isLoggedIn,
         function(req, res) {

@@ -7,7 +7,8 @@ export default class SignUpScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      singUpAs: "jobSeeker"
+      error: null,
+      signUpAs: "jobSeeker"
     };
   }
 
@@ -24,6 +25,22 @@ export default class SignUpScreen extends Component {
   };
 
   signUpUser = () => {
+    // clear any errors
+    this.setState({error: null});
+    
+    // validate, if errors return
+    if (!this.state.email || this.state.email === "") {
+      return this.setState({error: "No email provided"});
+    }
+
+    if (!this.state.password || this.state.password === "") {
+      return this.setState({error: "No password provided"});
+    }
+
+    if (!this.state.name || this.state.name === "") {
+      return this.setState({error: "No name provided"});
+    }
+
     let user = {
       email: this.state.email,
       name: this.state.name,
@@ -33,21 +50,22 @@ export default class SignUpScreen extends Component {
     let signUp = this.state.signUpAs === "jobSeeker" ?
       signUpJobSeeker : signUpRecruiter;
 
-    let goToScreen = this.state.singUpAs === "jobSeeker" ?
+    let goToScreen = this.state.signUpAs === "jobSeeker" ?
       this.goToJobSeekerHomeScreen : this.goToRecruiterHomeScreen;
 
     signUp(user).then(response => {
       goToScreen();
     }).catch(error => {
+      this.setState({error: "There was an issue signing up"});
       console.log("Error signing up:", error);
     });
   };
 
   render() {
-    let jobSeekerButtonStyle = this.state.singUpAs === "jobSeeker" ?
+    let jobSeekerButtonStyle = this.state.signUpAs === "jobSeeker" ?
       styles.buttonToggleItemSelected : styles.buttonToggleItemNotSelected;
 
-    let recruiterButtonStyle = this.state.singUpAs === "recruiter" ?
+    let recruiterButtonStyle = this.state.signUpAs === "recruiter" ?
       styles.buttonToggleItemSelected : styles.buttonToggleItemNotSelected;
 
     return (
@@ -65,7 +83,7 @@ export default class SignUpScreen extends Component {
           <View style={[styles.pullRight, styles.flexGrow]}>
             <TouchableHighlight 
               style={[styles.buttonToggleItem, jobSeekerButtonStyle]}
-              onPress={() => this.setState({singUpAs: "jobSeeker"})}>
+              onPress={() => this.setState({signUpAs: "jobSeeker"})}>
               <Text>Job Seeker</Text>
             </TouchableHighlight>
           </View>
@@ -73,7 +91,7 @@ export default class SignUpScreen extends Component {
           <View style={[styles.pullLeft, styles.flexGrow]}>
             <TouchableHighlight 
               style={[styles.buttonToggleItem, recruiterButtonStyle]}
-              onPress={() => this.setState({singUpAs: "recruiter"})}>
+              onPress={() => this.setState({signUpAs: "recruiter"})}>
               <Text>Recruiter</Text>
             </TouchableHighlight>
           </View>
@@ -108,6 +126,15 @@ export default class SignUpScreen extends Component {
             style={[styles.inputItem]}
           />
         </View>
+
+        {
+          this.state.error &&
+          <View style={[styles.errorRow, styles.textItem]}>
+            <Text style={[styles.centerText, styles.errorText]}>
+              { this.state.error }
+            </Text>
+          </View>
+        }
 
         <View style={[styles.buttonRow]}>
           <View style={[styles.signUpButtonContainer]}>
@@ -189,6 +216,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  errorRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 14
+  },
+  errorText: {
+    color: "red"
   },
   flexGrow: {
     flexGrow: 1
