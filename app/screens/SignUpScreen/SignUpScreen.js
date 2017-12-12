@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { StyleSheet, TouchableHighlight, Text, TextInput, View } from "react-native";
+import { StyleSheet, TouchableHighlight, Text, TextInput, View, ImageBackground, Image  } from "react-native";
 import { signUpJobSeeker, signUpRecruiter } from "./../../api/auth.js";
 
 export default class SignUpScreen extends Component {
@@ -51,9 +51,14 @@ export default class SignUpScreen extends Component {
       styles.buttonToggleItemSelected : styles.buttonToggleItemNotSelected;
 
     return (
+      <ImageBackground source={require('../../assets/images/Background.png')} style={styles.backgroundImage}>
       <View style={[styles.container]}>
-        <View style={[styles.buttonToggleLabel]}>
-          <Text style={styles.buttonToggleLabelText}>Sign Up As</Text>
+
+
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}> 
+            <Text style={{fontFamily : "Raleway-Black",fontSize: 40,color : "white"}}>H</Text>
+            YPERCRUITER</Text>
         </View>
 
         <View style={styles.buttonToggleRow}>
@@ -123,9 +128,12 @@ export default class SignUpScreen extends Component {
           </Text>
         </View>
       </View>
+      </ImageBackground>
+      
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   buttonRow: {
@@ -135,42 +143,52 @@ const styles = StyleSheet.create({
     paddingBottom: 15
   },
   buttonToggleItem: {
-    borderRadius: 0,
-    paddingLeft: 8,
-    paddingRight: 8,
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingLeft: 6,
+    paddingRight: 6,
+    paddingTop: 6,
+    paddingBottom: 6,
     width: 130,
     flexDirection: "row",
     justifyContent: "center"
   },
   buttonToggleItemSelected: {
-    backgroundColor: "lightgreen"
+    backgroundColor: "#7178C4",
   },
   buttonToggleItemNotSelected: {
-    backgroundColor: "#bbb"
+    backgroundColor: "#D8D8D8",
+    
+
   },
   buttonToggleLabel: {
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: 10,
+    marginTop: 5,
     paddingBottom: 14
   },
   buttonToggleLabelText: {
-    fontSize: 15,
-    fontWeight: "bold"
+    fontSize: 11,
+    color : "white",
+    fontFamily : "Raleway-Thin"
   },
+
+  backgroundImage: {
+    flex: 1,
+    alignSelf: 'stretch',
+    width: null,
+  }, 
   buttonToggleRow: {
     flexDirection: "row",
-    marginTop: 6,
+    marginTop: 30,
     paddingBottom: 8
   },
   centerText: {
     textAlign: "center"
   },
   container: {
-    padding: 8,
-    paddingTop: 15
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   flexGrow: {
     flexGrow: 1
@@ -178,23 +196,45 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    paddingTop: 20,
-    paddingBottom: 5
+    borderRadius: 50,
+    backgroundColor : 'rgba(76,76,76,.37)',
+    marginTop : 25
   },
   inputItem: {
     margin: "auto",
-    borderColor: "#333333",
-    borderRadius: 5,
-    borderWidth: 1.5,
-    width: "55%",
-    height: 35,
-    paddingLeft: 10
+    borderColor: "transparent",
+    borderRadius: 50,
+    fontSize : 14,
+    paddingLeft : 30,
+    //underlineColorAndroid : "none",
+    fontFamily : "Raleway-Thin",
+    width: "70%",
+    height: 60,
+    color : "white"
   },
   link: {
-    color: "blue"
+    color: "#FFFFFF",
+    backgroundColor : "transparent",
+    fontFamily : "Raleway-Light"
   },
-  loginRedirectRow: {
+  loginButton: {
+    borderRadius: 50,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#7178C4"
+  },
+  signUpButtonContainer: {
+    marginTop : 20,
+    borderRadius: 50,
+    width: "50%",
+    backgroundColor: "#ccc",
     marginTop: 10
+  },
+  signUpButtonText: {
+    fontSize: 24,
+    fontFamily : "Raleway-Light",
+    color : "white",
   },
   pullLeft: {
     flexDirection: "row",
@@ -204,23 +244,24 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-end"
   },
-  signUpButton: {
-    borderRadius: 8,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ccc"
-  },
-  signUpButtonContainer: {
-    borderRadius: 8,
-    width: "40%",
-    backgroundColor: "#ccc",
-    marginTop: 10
-  },
-  signUpButtonText: {
-    fontSize: 18
-  },
   textItem: {
     paddingTop: 8
+  },
+  signUpRedirectRow: {
+    marginTop: 10
+  },
+  headerContainer : {
+    
+  },
+  headerText : {
+     fontSize: 40,
+     fontFamily : "Raleway-Thin",
+     color : "white",
+     backgroundColor : "transparent",
+  },
+  iconContainer : {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom : 10
   }
 });
